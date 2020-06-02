@@ -57,3 +57,10 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+
+*.p12
+*.cer
+*.certSigningRequest
+*.mobileprovision
+*.dSYM.zip
+/ios/GoogleService-Info.plist

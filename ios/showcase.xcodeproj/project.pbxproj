@@ -18,8 +18,7 @@
 		2DCD954D1E0B4F2C00145EB5 /* showcaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* showcaseTests.m */; };
 		371DE0299AE175CFC441924D /* libPods-showcase-showcaseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0CDDCE04EBEB6EE70F4124F /* libPods-showcase-showcaseTests.a */; };
 		52022F7F7DB4036D64D8CC94 /* libPods-showcase-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7DD8EEDA8518D8E6F39D23E /* libPods-showcase-tvOSTests.a */; };
-		8086CE8D248515F600B40EAA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8086CE8C248515F600B40EAA /* GoogleService-Info.plist */; };
-		8086CE8E248515F600B40EAA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8086CE8C248515F600B40EAA /* GoogleService-Info.plist */; };
+		80488C912486765E0014BB15 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80488C902486765E0014BB15 /* GoogleService-Info.plist */; };
 		890DDB5356BC1B70036994D9 /* libPods-showcase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 116B14DF08862A4E0F4A62E3 /* libPods-showcase.a */; };
 		D1BF90A6FF6A70840C750063 /* libPods-showcase-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF2A56AC8FB9484DFC1150D /* libPods-showcase-tvOS.a */; };
 /* End PBXBuildFile section */
@@ -60,7 +59,7 @@
 		329146174919F60A6BD801D9 /* Pods-showcase-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-showcase-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-showcase-tvOSTests/Pods-showcase-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		392BA1CBBAD30D4676229030 /* Pods-showcase-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-showcase-tvOS.release.xcconfig"; path = "Target Support Files/Pods-showcase-tvOS/Pods-showcase-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		7726F3EACB7F1C1EE0C04B35 /* Pods-showcase-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-showcase-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-showcase-tvOS/Pods-showcase-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		8086CE8C248515F600B40EAA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		80488C902486765E0014BB15 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8434DCDE85E45D54F0DC04B3 /* Pods-showcase-showcaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-showcase-showcaseTests.debug.xcconfig"; path = "Target Support Files/Pods-showcase-showcaseTests/Pods-showcase-showcaseTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A7DD8EEDA8518D8E6F39D23E /* libPods-showcase-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-showcase-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0CDDCE04EBEB6EE70F4124F /* libPods-showcase-showcaseTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-showcase-showcaseTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,7 +161,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				8086CE8C248515F600B40EAA /* GoogleService-Info.plist */,
+				80488C902486765E0014BB15 /* GoogleService-Info.plist */,
 				13B07FAE1A68108700A75B9A /* showcase */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* showcaseTests */,
@@ -235,6 +234,7 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				DD1B712840AA4691AD311856 /* [CP] Copy Pods Resources */,
+				80488C8D2486504D0014BB15 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -297,7 +297,9 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = 5Z9R4HPE6N;
 						LastSwiftMigration = 1120;
+						ProvisioningStyle = Automatic;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -345,7 +347,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				8086CE8D248515F600B40EAA /* GoogleService-Info.plist in Resources */,
+				80488C912486765E0014BB15 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,7 +356,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */,
-				8086CE8E248515F600B40EAA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +458,25 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		80488C8D2486504D0014BB15 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		9A33A07C650F560BE4670C76 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -672,7 +692,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 5Z9R4HPE6N;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -680,13 +703,15 @@
 				);
 				INFOPLIST_FILE = showcase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alekseykozin.showcase;
 				PRODUCT_NAME = showcase;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -699,16 +724,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 5Z9R4HPE6N;
 				INFOPLIST_FILE = showcase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.1;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alekseykozin.showcase;
 				PRODUCT_NAME = showcase;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

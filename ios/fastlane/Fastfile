@@ -15,25 +15,36 @@
 
 default_platform(:ios)
 
+# 
+
 TEAM_ID = "5Z9R4HPE6N"
 USERNAME = "cirnotoss@gmail.com"
+APP_IDENTIFIER = "com.alekseykozin.showcase"
+
+# 
 
 platform :ios do
   desc "Description of what the lane does"
   lane :distribute do
     increment_build_number(build_number: number_of_commits)
+    update_app_identifier(
+      xcodeproj: "showcase.xcodeproj",
+      plist_path: "showcase/Info.plist",
+      app_identifier: APP_IDENTIFIER
+    )
     register_devices(
       team_id: TEAM_ID,
       username: USERNAME,
       devices: {
         "Aleksey's iPhone 7" => "4c09eadc09b4d54f67586d8394ecc4624c25727d",
+        "Marina's iPhone SE" => "7ee6cd91f4946af9936f272b636824c488b07962",
       },
     )
     match(
       type: "adhoc", 
       team_id: TEAM_ID,
       username: USERNAME,
-      app_identifier: "com.alekseykozin.showcase",
+      app_identifier: APP_IDENTIFIER,
       git_url: "git@github.com:aleksejkozin/private_keys_and_certificates.git",
       force: true
       )

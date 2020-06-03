@@ -6,9 +6,9 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest",
+    "test": "jest && detox build && detox test",
     "lint": "eslint .",
-    "pods": "cd ./ios && pod install",
+    "pod": "cd ./ios && pod install",
     "distribute_to_testers": "cd ./ios && fastlane ios distribute"
   },
   "dependencies": {
@@ -27,7 +27,8 @@
     "react-test-renderer": "16.11.0"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "testRegex": "./__tests__/.*.js$"
   },
   "detox": {
     "testRunner": "jest",

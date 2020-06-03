@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-const App = () => {
+const Home = () => {
   return (
     <View style={styles.root}>
       <Text>Welcome to React</Text>
@@ -18,4 +18,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default App;
+export default Home;

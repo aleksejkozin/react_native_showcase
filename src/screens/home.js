@@ -1,21 +1,22 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import { SafeAreaView } from 'react-native';
+import { Button, Divider, Layout, TopNavigation } from '@ui-kitten/components';
 
-const Home = () => {
+
+
+export const HomeScreen = ({ navigation }) => {
+
+  const navigateDetails = () => {
+    navigation.navigate('Details');
+  };
+
   return (
-    <View style={styles.root}>
-      <Text>Welcome to React</Text>
-    </View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <TopNavigation title='MyApp' alignment='center'/>
+      <Divider/>
+      <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Button onPress={navigateDetails}>OPEN DETAILS</Button>
+      </Layout>
+    </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center"
-  }
-});
-
-export default Home;

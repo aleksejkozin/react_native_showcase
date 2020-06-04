@@ -57,7 +57,7 @@ const App = () => {
               component={HomeScreen}
               initialParams={{user: user && {email: user.email}}}
               options={{
-                title: 'Sign in',
+                title: 'Showcase',
               }}
             />
           ) : (

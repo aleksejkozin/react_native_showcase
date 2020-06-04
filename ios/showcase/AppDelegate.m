@@ -1,7 +1,7 @@
 #import "AppDelegate.h"
 
 #import <Firebase.h>
-// #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
@@ -34,8 +34,8 @@ static void InitializeFlipper(UIApplication *application) {
     [FIRApp configure];
   }
 
-  // [[FBSDKApplicationDelegate sharedInstance] application:application
-  //    didFinishLaunchingWithOptions:launchOptions];
+  [[FBSDKApplicationDelegate sharedInstance] application:application
+     didFinishLaunchingWithOptions:launchOptions];
   
 #if DEBUG
   InitializeFlipper(application);
@@ -56,13 +56,13 @@ static void InitializeFlipper(UIApplication *application) {
   return YES;
 }
 
-// - (void)applicationDidBecomeActive:(UIApplication *)application {
-//     [FBSDKAppEvents activateApp];
-// }
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [FBSDKAppEvents activateApp];
+}
 
-// - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-//     return [[FBSDKApplicationDelegate sharedInstance] application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
-// }
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
+}
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
 {

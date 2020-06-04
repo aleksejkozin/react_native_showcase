@@ -32,7 +32,7 @@ async function onFacebookButtonPress() {
   return auth().signInWithCredential(facebookCredential);
 }
 
-const Login = ({navigation}) => {
+const LoginScreen = ({navigation}) => {
   const [loading, setLoading] = useState(false);
 
   return (
@@ -74,4 +74,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default LoginScreen;

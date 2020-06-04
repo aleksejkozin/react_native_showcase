@@ -1,10 +1,16 @@
 import React from 'react';
-import {View, Text, StyleSheet, Button} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
+import {Button} from 'react-native-paper';
 
-const Login = props => {
+const Login = ({navigation}) => {
   return (
     <View style={styles.root}>
-      <Button testID="login" title="Login" />
+      <Button
+        icon="camera"
+        mode="contained"
+        onPress={() => navigation.navigate('Home')}>
+        Press me
+      </Button>
     </View>
   );
 };

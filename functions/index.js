@@ -1,28 +1,65 @@
 const functions = require('firebase-functions');
+const REGION = 'europe-west3';
+const rfunctions = functions.region(REGION);
 
 const admin = require('firebase-admin');
 admin.initializeApp();
-let db = admin.firestore();
+const db = admin.firestore();
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
+const currentTime = admin.firestore.FieldValue.serverTimestamp();
+const increment = admin.firestore.FieldValue.increment(1);
 
-exports.helloWorld = functions.https.onCall(() => {
-  return ['lol', 'internet'];
-});
+exports.onCreateEmotion = rfunctions.firestore
+  .document('emotions/{emotionId}')
+  .onCreate(async (snap, context) => {
+    const emotion = snap.data();
 
-exports.sendEmotion = functions.https.onCall((data, context) => {
+    let batch = db.batch();
+
+    batch.set(
+      db.collection('users').doc(emotion.uid),
+      {
+        emotionsCount: increment,
+        lastEmotionTime: currentTime,
+      },
+      {merge: true},
+    );
+
+    batch.set(
+      db.collection('emotions').doc('--stats--'),
+      {
+        emotionsCount: increment,
+        lastEmotionTime: currentTime,
+      },
+      {merge: true},
+    );
+
+    await batch.commit();
+  });
+
+exports.sendEmotion = rfunctions.https.onCall(async (data, context) => {
+  if (!context.auth) {
+    throw new functions.https.HttpsError(
+      'failed-precondition',
+      'The function must be called while authenticated.',
+    );
+  }
+
+  const uid = context.auth.uid;
   const {emotion} = data;
 
-  db.collection('users')
-    .doc('alovelace')
-    .set({
-      first: 'Ada',
-      last: 'Lovelace',
-      emotion: emotion,
-      born: 1815,
-    });
+  if (typeof emotion !== 'string' || emotion.length > 2) {
+    throw new functions.https.HttpsError(
+      'failed-precondition',
+      'Invalid input.',
+    );
+  }
+
+  await db.collection('emotions').add({
+    uid: uid,
+    emotion: emotion,
+    createdAt: currentTime,
+  });
 
   return {
     result: 'Ok',

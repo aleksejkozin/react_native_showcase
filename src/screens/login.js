@@ -4,14 +4,11 @@ import {Button, ActivityIndicator} from 'react-native-paper';
 
 import auth from '@react-native-firebase/auth';
 import {LoginManager, AccessToken} from 'react-native-fbsdk';
-import {AppContext} from '../index';
+import {AppContext} from '../app';
 
 async function onFacebookButtonPress() {
   // Attempt login with permissions
-  const result = await LoginManager.logInWithPermissions([
-    'public_profile',
-    'email',
-  ]);
+  const result = await LoginManager.logInWithPermissions(['public_profile']);
 
   if (result.isCancelled) {
     throw 'User cancelled the login process';

@@ -80,7 +80,9 @@ const App = () => {
               <Stack.Screen
                 name="Home"
                 component={HomeScreen}
-                initialParams={{user: user && {email: user.email}}}
+                initialParams={{
+                  user: user && {email: user.email, uid: user.uid},
+                }}
                 options={{
                   title: 'Showcase',
                 }}

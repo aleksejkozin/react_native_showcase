@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {AppRegistry, View} from 'react-native';
+import {AppRegistry, View, Button} from 'react-native';
 
 import HomeScreen from './screens/home';
 import LoginScreen from './screens/login';
@@ -85,6 +85,12 @@ const App = () => {
                 }}
                 options={{
                   title: 'Showcase',
+                  headerRight: () => (
+                    <Button
+                      onPress={() => auth().signOut()}
+                      title="Logout"
+                    />
+                  ),
                 }}
               />
             ) : (

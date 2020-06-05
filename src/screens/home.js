@@ -89,7 +89,7 @@ const EmotionsView = ({user}) => {
 const HomeScreen = ({route}) => {
   const {user} = route.params;
 
-  if (!user || !user.email) {
+  if (!user) {
     return null;
   }
 

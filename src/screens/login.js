@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {Button, ActivityIndicator} from 'react-native-paper';
 
 import auth from '@react-native-firebase/auth';
 import {LoginManager, AccessToken} from 'react-native-fbsdk';
+import {AppContext} from '../index';
 
 async function onFacebookButtonPress() {
   // Attempt login with permissions
@@ -33,7 +34,7 @@ async function onFacebookButtonPress() {
 }
 
 const LoginScreen = ({navigation}) => {
-  const [loading, setLoading] = useState(false);
+  const {setBusy} = useContext(AppContext);
 
   return (
     <View style={styles.root}>
@@ -41,26 +42,11 @@ const LoginScreen = ({navigation}) => {
         icon="facebook"
         mode="contained"
         onPress={() => {
-          setLoading(true);
-          onFacebookButtonPress().finally(() => setLoading(false));
+          setBusy(true);
+          onFacebookButtonPress().finally(() => setBusy(false));
         }}>
         log in with facebook
       </Button>
-      {loading && (
-        <View
-          style={{
-            position: 'absolute',
-            backgroundColor: 'rgba(0,0,0,0.7)',
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            flex: 1,
-            justifyContent: 'center',
-          }}>
-          <ActivityIndicator animating={true} size="large" color="white" />
-        </View>
-      )}
     </View>
   );
 };

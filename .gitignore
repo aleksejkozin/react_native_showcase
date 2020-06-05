@@ -64,3 +64,4 @@ buck-out/
 *.mobileprovision
 *.dSYM.zip
 /ios/GoogleService-Info.plist
+*.log
